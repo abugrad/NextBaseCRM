@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json",
                 "html:target/default-html-reports"},
         features = "src/test/resources/features",
-        glue = "com/nextbase/step_definitions",
-        dryRun = true,
+        glue = "com/nextbase/stepdefinitions",
+        dryRun = false,
         tags = "@wip"
 )
 
