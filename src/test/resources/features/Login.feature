@@ -1,4 +1,4 @@
-@wip
+
 Feature: Login functionality
 
   Background:
