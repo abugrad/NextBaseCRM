@@ -18,13 +18,13 @@ public class DriveStepDefs {
         new LoginPage().login(username,password);
     }
 
-    @When("the user navigates to {string} {string}")
-    public void the_user_navigates_to(String tab, String module) {
-        new BasePage().navigateToModule(tab, module);
+    @When("the user navigates to {string} menu, {string} tab")
+    public void the_user_navigates_to(String menu, String tab) {
+        new BasePage().navigateToModule(menu, tab);
     }
 
-    @Then("the title should be {string}")
-    public void the_title_should_be(String expTitle) {
+    @Then("the user should be able to display {string}")
+    public void the_user_should_be_able_to_display(String expTitle) {
         String actTitle = Driver.get().getTitle();
 
         Assert.assertEquals(expTitle,actTitle);
