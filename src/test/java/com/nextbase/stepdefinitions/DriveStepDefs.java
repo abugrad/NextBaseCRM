@@ -1,6 +1,5 @@
 package com.nextbase.stepdefinitions;
-
-import com.nextbase.pages.BasePage;
+import com.nextbase.pages.DashboardPage;
 import com.nextbase.pages.LoginPage;
 import com.nextbase.utilities.ConfigurationReader;
 import com.nextbase.utilities.Driver;
@@ -20,7 +19,7 @@ public class DriveStepDefs {
 
     @When("the user navigates to {string} menu, {string} tab")
     public void the_user_navigates_to(String menu, String tab) {
-        new BasePage().navigateToModule(menu, tab);
+        new DashboardPage().navigateToModule(menu, tab);
     }
 
     @Then("the user should be able to display {string}")

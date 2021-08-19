@@ -36,17 +36,15 @@ public class LoginStepDefs {
         for(int i=1;i<=attempt;i++){
             loginPage.login(userName,password);
             BrowserUtils.waitForPageToLoad(2);
+            BrowserUtils.waitFor(1);
         }
     }
 
     @Then("user should not be able to try to login")
     public void user_should_not_be_able_to_try_to_login() {
-        boolean userNameEnabled = loginPage.userName.isEnabled();
-        boolean passwordEnabled = loginPage.password.isEnabled();
-        boolean submitEnabled = loginPage.submit.isEnabled();
-        boolean check = userNameEnabled || passwordEnabled ||submitEnabled;
+        boolean isSubmitEnabled = loginPage.submit.isEnabled();
 
-        Assert.assertFalse(check);
+        Assert.assertFalse(isSubmitEnabled);
     }
 
     @Given("the user is on the login page")
@@ -56,6 +54,7 @@ public class LoginStepDefs {
     @When("the user enters {string} username and {string} password")
     public void the_user_enters_username_and_password(String username, String password) {
         loginPage.login(username,password);
+
     }
 
 }
